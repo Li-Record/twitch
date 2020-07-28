@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/config/reset.scss"
+    ],
+    "names": [],
+    "file": "reset.min.css"
+}

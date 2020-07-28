@@ -1,0 +1,163 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.l-container {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.l-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(https://lolstatic-a.akamaihd.net/lolkit/1.1.6/resources/images/bg-default.jpg);
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+.l-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: 50%;
+}
+
+.c-streamerCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.c-streamerCard__item {
+  background: #000;
+  width: 300px;
+  height: 240px;
+  margin: 10px;
+  opacity: 50%;
+}
+
+.c-streamerCard__link {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: [line1] 80px [line2] 220px [line3];
+      grid-template-columns: [line1] 80px [line2] 220px [line3];
+  -ms-grid-rows: [row1] 170px [row2] 70px [row3];
+      grid-template-rows: [row1] 170px [row2] 70px [row3];
+  height: 100%;
+}
+
+.c-streamerCard__img {
+  grid-column: line1 / line3;
+  grid-row: row1 / row2;
+  background-image: url(https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.c-streamerCard__user {
+  grid-column: line1 / line2;
+  grid-row: row2 / row3;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 0 auto;
+  background-image: url(https://pic.pimg.tw/chi771027/1208169140.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.c-streamerCard__info {
+  grid-column: line2 / line3;
+  grid-row: row2 / row3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: .8rem;
+  color: #fff;
+}
+/*# sourceMappingURL=all.css.map */

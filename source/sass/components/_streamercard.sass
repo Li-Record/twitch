@@ -1,0 +1,43 @@
+.c-
+  &streamerCard
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    width: 960px
+    margin: 0 auto
+    &__item
+      background: #000
+      width: 300px
+      height: 240px
+      margin: 10px
+      opacity: 50%
+    &__link
+      display: grid
+      grid-template-columns: [line1] 80px [line2] 220px [line3]
+      grid-template-rows: [row1] 170px [row2] 70px [row3]
+      height: 100%
+    &__img
+      grid-column: line1 / line3
+      grid-row: row1 / row2
+      background-image: url(https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg)
+      background-position: center
+      background-size: cover
+    &__user
+      grid-column: line1 / line2
+      grid-row: row2 / row3
+      width: 55px
+      height: 55px
+      border-radius: 50%
+      align-self: center
+      margin: 0 auto
+      background-image: url(https://pic.pimg.tw/chi771027/1208169140.jpg)
+      background-position: center
+      background-size: cover
+    &__info
+      grid-column: line2 / line3
+      grid-row: row2 / row3
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      padding: .8rem
+      color: map.get($font-color, "white")
