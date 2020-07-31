@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://seeklogo.com/images/T/twitch-tv-logo-51C922E0F0-seeklogo.com.png">
+  <link rel="stylesheet" href="node_modules/loaders.css/loaders.min.css">
   <link rel="stylesheet" href="source/css/all.css">
   <title>Twitch</title>
 </head>
@@ -10,152 +12,29 @@
   
   <main>
     <div class="l-container">
-      <div class="l-wrap"></div>
-      <ul class="c-streamerCard">
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-        <li class="c-streamerCard__item">
-          <a class="c-streamerCard__link" href="#">
-            <div class="c-streamerCard__img"></div>
-            <div class="c-streamerCard__user">
-            </div>
-            <div class="c-streamerCard__info">
-              <h3>頻道名稱</h3>
-              <p>實況主名字</p>
-            </div>
-          </a>
-        </li>
-      </ul>
+      <div class="l-wrap">
+        <!-- <div class="loader-inner ball-spin-fade-loader"></div>   -->
+        
+        <ul id="liveMasterList" class="c-streamerCard">
+          
+          <!-- <li class="c-streamerCard__item">
+            <a class="c-streamerCard__link" href="#">
+              <div id="channelThumbnail" class="c-streamerCard__img">
+                <img src="https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg" alt="">
+              </div>
+              <div class="c-streamerCard__user">
+                <img id="liveMainHeader" src="https://pic.pimg.tw/chi771027/1208169140.jpg" alt="">
+              </div>
+              <div class="c-streamerCard__info">
+                <h3 id="channelName">頻道名稱</h3>
+                <p id="nameOfLiveMaster">實況主名字</p>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+        <div class="h-loader"><div class="pacman"><div></div><div></div><div></div><div></div><div></div></div></div>
+      </div>
+      
     </div>
 
     
@@ -163,6 +42,7 @@
 
   <!-- jquery-3.5.1 -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="node_modules/loaders.css/loaders.css.js"></script>
   <script src="source/js/all.js"></script>
 </body>
 </html>

@@ -63,32 +63,31 @@ a {
   text-decoration: none;
 }
 
+.h-loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40vh;
+}
+
+.h-loader pacman {
+  background: #000;
+}
+
 .l-container {
   height: 100vh;
-  overflow-y: auto;
-  padding: 2rem;
+  background-image: url(https://lolstatic-a.akamaihd.net/lolkit/1.1.6/resources/images/bg-default.jpg);
+  background-attachment: fixed;
 }
 
 .l-wrap {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-image: url(https://lolstatic-a.akamaihd.net/lolkit/1.1.6/resources/images/bg-default.jpg);
-  background-attachment: fixed;
-  z-index: -1;
-}
-
-.l-wrap::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #000;
-  opacity: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  overflow-y: auto;
+  padding: 2rem;
 }
 
 .c-streamerCard {
@@ -105,11 +104,26 @@ a {
 }
 
 .c-streamerCard__item {
-  background: #000;
   width: 300px;
-  height: 240px;
-  margin: 10px;
-  opacity: 50%;
+  height: 260px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: -webkit-filter .3s, -webkit-box-shadow .3s;
+  transition: -webkit-filter .3s, -webkit-box-shadow .3s;
+  transition: filter .3s, box-shadow .3s;
+  transition: filter .3s, box-shadow .3s, -webkit-filter .3s, -webkit-box-shadow .3s;
+}
+
+.c-streamerCard__item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.c-streamerCard__item:hover {
+  -webkit-box-shadow: 3px 3px 10px #000;
+          box-shadow: 3px 3px 10px #000;
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
 }
 
 .c-streamerCard__link {
@@ -117,17 +131,14 @@ a {
   display: grid;
   -ms-grid-columns: [line1] 80px [line2] 220px [line3];
       grid-template-columns: [line1] 80px [line2] 220px [line3];
-  -ms-grid-rows: [row1] 170px [row2] 70px [row3];
-      grid-template-rows: [row1] 170px [row2] 70px [row3];
+  -ms-grid-rows: [row1] 180px [row2] 80px [row3];
+      grid-template-rows: [row1] 180px [row2] 80px [row3];
   height: 100%;
 }
 
 .c-streamerCard__img {
   grid-column: line1 / line3;
   grid-row: row1 / row2;
-  background-image: url(https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg);
-  background-position: center;
-  background-size: cover;
 }
 
 .c-streamerCard__user {
@@ -135,29 +146,28 @@ a {
   grid-row: row2 / row3;
   width: 55px;
   height: 55px;
-  border-radius: 50%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   margin: 0 auto;
-  background-image: url(https://pic.pimg.tw/chi771027/1208169140.jpg);
-  background-position: center;
-  background-size: cover;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .c-streamerCard__info {
   grid-column: line2 / line3;
   grid-row: row2 / row3;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.c-streamerCard__title {
+  overflow: hidden;
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: .8rem;
-  color: #fff;
+  -webkit-line-clamp: 1;
 }
 /*# sourceMappingURL=all.css.map */
