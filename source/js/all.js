@@ -1,64 +1,16 @@
 $(document).ready(function () {
   console.log('ready');
+
+  // loading 套件
   $('.loader-inner').loaders();
+
+  // twitch API id
   const twitchClient = {
     id: 'lqvtrh1ew90xekcjlrqoywwptaioqo',
     secret: 'u17jrynqwp9cerkzvrgk1z5xl2hxa7',
   }
-  function getStreamerList(token) {
-    // 取得實況列表
-    $.ajax({
-      type: "GET",
-      async: true,
-      url: "https://api.twitch.tv/helix/streams",
-      data: {
-        language: "zh",
-      },
-      headers: {
-        'client-id': twitchClient.id,
-        'Authorization': 'Bearer ' + token,
-      },
-      success: function (response) {
-        const data = response.data;
-        data.forEach((item) => {
-          let id = item.user_id;
-          item.profile_image_url = getStreamerInfo(id, token);
-          // console.log(getStreamerInfo(id, token));
-        })
 
-        randerStreamerList(data);
-      },
-      error: function () {
-        console.log('getting list error');
-      }
-    });
-  }
-  function getStreamerInfo(user_id, token) {
-    // 取得實況主資訊
-    let img = ''
-    $.ajax({
-      type: "GET",
-      async: false,
-      url: "https://api.twitch.tv/helix/users",
-      data: {
-        id: user_id,
-      },
-      headers: {
-        'client-id': twitchClient.id,
-        'Authorization': 'Bearer ' + token,
-      },
-      success: function (response) {
-        const data = response.data;
-        // console.log(data[0].profile_image_url);
-        img = data[0].profile_image_url;
-      },
-      error: function () {
-        console.log('getting info error');
-      }
-    });
-    return img;
-  }
-  // 取得 token
+  // API 取得 token
   $.ajax({
     type: "POST",
     async: true,
@@ -77,10 +29,68 @@ $(document).ready(function () {
       console.log('token error');
     }
   });
+
+  // 實況列表
+  let streamerList = [];
+
+  // API 取得實況列表
+  function getStreamerList(token) {
+    $.ajax({
+      type: "GET",
+      async: true,
+      url: "https://api.twitch.tv/helix/streams",
+      data: {
+        language: "zh",
+        first: 50,
+      },
+      headers: {
+        'client-id': twitchClient.id,
+        'Authorization': 'Bearer ' + token,
+      },
+      success: function (response) {
+        const data = response.data;
+        streamerList = [...data];
+        streamerList.forEach((item, index) => {
+          let id = item.user_id;
+          getStreamerInfo(id, index, token);
+        })
+        randerStreamerList(streamerList);
+      },
+      error: function () {
+        console.log('getting list error');
+      }
+    });
+  }
+
+  // 取得實況主資訊
+  function getStreamerInfo(user_id, index, token) {
+    let img = ''
+    $.ajax({
+      type: "GET",
+      async: true,
+      url: "https://api.twitch.tv/helix/users",
+      data: {
+        id: user_id,
+      },
+      headers: {
+        'client-id': twitchClient.id,
+        'Authorization': 'Bearer ' + token,
+      },
+      success: function (response) {
+        const data = response.data;
+        streamerList[index].profile_image_url = data[0].profile_image_url;
+        randerStreamerList(streamerList);
+      },
+      error: function () {
+        console.log('getting info error');
+      }
+    });
+  }
+
+  // 渲染畫面
   function randerStreamerList(streamerList) {
     let list = streamerList;
     let listElment = '';
-    console.log(list);
     list.forEach((item) => {
       let name = item.user_name;
       let title = item.title;
@@ -107,4 +117,5 @@ $(document).ready(function () {
     $('.h-loader').remove();
     $('#liveMasterList').html(listElment);
   }
+  
 });
